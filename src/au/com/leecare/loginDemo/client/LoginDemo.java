@@ -10,47 +10,47 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 
-
 public class LoginDemo implements EntryPoint {
 
-	@Override
-	public void onModuleLoad() {
-		final Button sendButton = new Button("Go");
-		final TextBox nameField = new TextBox();
-		final Label errorLabel = new Label();
+  @Override
+  public void onModuleLoad() {
+    final Button sendButton = new Button("Go");
+    final TextBox nameField = new TextBox();
+    final Label errorLabel = new Label();
 
-		final PasswordTextBox passwordField = new PasswordTextBox();
+    final PasswordTextBox passwordField = new PasswordTextBox();
 
-		sendButton.addStyleName("loginButton");
+    sendButton.addStyleName("loginButton");
 
-		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get("passwordFieldContainer").add(passwordField);
-		RootPanel.get("sendButtonContainer").add(sendButton);
-		RootPanel.get("errorLabelContainer").add(errorLabel);
+    RootPanel.get("nameFieldContainer").add(nameField);
+    RootPanel.get("passwordFieldContainer").add(passwordField);
+    RootPanel.get("sendButtonContainer").add(sendButton);
+    RootPanel.get("errorLabelContainer").add(errorLabel);
 
-		nameField.setFocus(true);
-		nameField.selectAll();
+    nameField.setFocus(true);
+    nameField.selectAll();
 
-		ClickHandler handler = new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				errorLabel.setText("");
-				String name = nameField.getText();
-								
-				if (!FieldVerifier.isValidName(name)) {
-					errorLabel.setText("User Name not valid");
-					return;
-				}
-				
-				String password = passwordField.getText();
-				
-				if(!FieldVerifier.isValidPassword(password)) {
-					errorLabel.setText("Password not valid");
-					return;
-				}
-			}
-		};
+    ClickHandler handler =
+        new ClickHandler() {
+          @Override
+          public void onClick(ClickEvent event) {
+            errorLabel.setText("");
+            String name = nameField.getText();
 
-		sendButton.addClickHandler(handler);
-	}
+            if (!FieldVerifier.isValidName(name)) {
+              errorLabel.setText("User Name not valid");
+              return;
+            }
+
+            String password = passwordField.getText();
+
+            if (!FieldVerifier.isValidPassword(password)) {
+              errorLabel.setText("Password not valid");
+              return;
+            }
+          }
+        };
+
+    sendButton.addClickHandler(handler);
+  }
 }
