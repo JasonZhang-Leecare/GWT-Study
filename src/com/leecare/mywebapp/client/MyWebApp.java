@@ -1,0 +1,56 @@
+package com.leecare.mywebapp.client;
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.leecare.mywebapp.shared.FieldVerifier;
+
+
+public class MyWebApp implements EntryPoint {
+
+	@Override
+	public void onModuleLoad() {
+		final Button sendButton = new Button("Go");
+		final TextBox nameField = new TextBox();
+		final Label errorLabel = new Label();
+
+		final PasswordTextBox passworldField = new PasswordTextBox();
+
+		sendButton.addStyleName("loginButton");
+
+		RootPanel.get("nameFieldContainer").add(nameField);
+		RootPanel.get("passwordFieldContainer").add(passworldField);
+		RootPanel.get("sendButtonContainer").add(sendButton);
+		RootPanel.get("errorLabelContainer").add(errorLabel);
+
+		nameField.setFocus(true);
+		nameField.selectAll();
+
+		ClickHandler handler = new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				errorLabel.setText("");
+				String name = nameField.getText();
+								
+				if (!FieldVerifier.isValidName(name)) {
+					errorLabel.setText("User Name not valid");
+					return;
+				}
+				
+				String password = passworldField.getText();
+				
+				if(!FieldVerifier.isValidPassword(password)) {
+					errorLabel.setText("Password not valid");
+					return;
+				}
+			}
+		};
+
+		sendButton.addClickHandler(handler);
+	}
+}

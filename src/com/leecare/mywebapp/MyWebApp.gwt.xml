@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='mywebapp'>
+
+  <inherits name='com.google.gwt.user.User'/>
+
+  <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+
+  <entry-point class='com.leecare.mywebapp.client.MyWebApp'/>
+
+  <source path='client'/>
+  <source path='shared'/>
+
+  <!-- allow Super Dev Mode -->
+  <add-linker name="xsiframe"/>
+</module>
