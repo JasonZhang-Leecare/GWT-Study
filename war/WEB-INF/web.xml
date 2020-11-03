@@ -6,7 +6,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <welcome-file-list>
-    <welcome-file>MyWebApp.html</welcome-file>
+    <welcome-file>LoginDemo.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module rename-to='mywebapp'>
+<module rename-to='logindemo'>
 
   <inherits name='com.google.gwt.user.User'/>
 
   <inherits name='com.google.gwt.user.theme.clean.Clean'/>
 
-  <entry-point class='com.leecare.mywebapp.client.MyWebApp'/>
+  <entry-point class='au.com.leecare.loginDemo.client.LoginDemo'/>
 
   <source path='client'/>
   <source path='shared'/>

@@ -1,4 +1,4 @@
-package com.leecare.mywebapp.shared;
+package au.com.leecare.loginDemo.shared;
 
 // There is a strange error 'The import java.util.regex cannot be resolved' - So I have to drop Regex for now
 // import java.util.regex.Matcher;
@@ -18,7 +18,7 @@ public class FieldVerifier {
 
 	// Will use Apache String Util to replace the function here
 	public static boolean isValidPassword(String password) {
-		if (password == null || password.isBlank())
+		if (password == null || password.trim().isEmpty())
 			return false;
 
 		if (noSpecialCharacter(password))
@@ -29,7 +29,6 @@ public class FieldVerifier {
 		if (!containsDigit(password)) return false;
 		
 		return true;
-
 	}
 
 	// Usually should use Apache StringUtil
@@ -44,7 +43,6 @@ public class FieldVerifier {
 		}
 
 		return true;
-
 	}
 
 	// Usually should use Apache StringUtil
@@ -68,5 +66,4 @@ public class FieldVerifier {
 		
 		return false;
 	}
-	
 }
