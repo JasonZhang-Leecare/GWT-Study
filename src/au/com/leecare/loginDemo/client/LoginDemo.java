@@ -10,6 +10,12 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 
+/**
+ * Entry point for Login Function, will validate user name and password
+ *
+ * @auther Jason Zhang
+ */
+
 public class LoginDemo implements EntryPoint {
 
   @Override
